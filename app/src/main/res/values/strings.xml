@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">suitmediamobiledeveloperintern2023</string>
+    <string name="photo_icon">Photo Icon</string>
+    <string name="name">Name</string>
+    <string name="palindrome">Palindrome</string>
+    <string name="check">Check</string>
+    <string name="next">Next</string>
+    <string name="choose_a_user">Choose a User</string>
+    <string name="welcome">Welcome</string>
+    <string name="palindrome_check">Palindrome Check</string>
+    <string name="palindrome_true">isPalindrome</string>
+    <string name="palindrome_false">not palindrome</string>
+    <string name="avatar">Avatar</string>
+    <string name="empty">Empty</string>
+    <string name="fetch_fail">Gagal mendapatkan data</string>
+    <string name="third_screen">Third Screen</string>
+</resources>
