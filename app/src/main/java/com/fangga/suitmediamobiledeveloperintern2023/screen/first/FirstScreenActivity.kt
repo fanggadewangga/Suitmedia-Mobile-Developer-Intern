@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.Gravity
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
 import com.fangga.suitmediamobiledeveloperintern2023.R
 import com.fangga.suitmediamobiledeveloperintern2023.databinding.ActivityFirstScreenBinding
 import com.fangga.suitmediamobiledeveloperintern2023.screen.second.SecondScreenActivity
@@ -32,23 +31,18 @@ class FirstScreenActivity : AppCompatActivity() {
         viewBinding.apply {
             btnCheck.setOnClickListener {
                 val inputText = edtPalindrome.text.toString()
-                viewModel.isPalindrome(inputText)
-                lifecycleScope.launchWhenStarted {
-                    viewModel.isPalindrome.collect { isPalindrome ->
-                        if (isPalindrome)
-                            showDialog(
-                                type = DialogType.SUCCESS,
-                                getString(R.string.palindrome_check),
-                                getString(R.string.palindrome_true)
-                            )
-                        else
-                            showDialog(
-                                type = DialogType.ERROR,
-                                getString(R.string.palindrome_check),
-                                getString(R.string.palindrome_false)
-                            )
-                    }
-                }
+                if (viewModel.isPalindrome(inputText))
+                    showDialog(
+                        type = DialogType.SUCCESS,
+                        getString(R.string.palindrome_check),
+                        getString(R.string.palindrome_true)
+                    )
+                else
+                    showDialog(
+                        type = DialogType.ERROR,
+                        getString(R.string.palindrome_check),
+                        getString(R.string.palindrome_false)
+                    )
             }
 
             btnNext.setOnClickListener {

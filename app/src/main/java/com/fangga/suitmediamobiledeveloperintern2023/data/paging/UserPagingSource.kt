@@ -6,9 +6,7 @@ import com.fangga.suitmediamobiledeveloperintern2023.data.source.remote.api.ApiS
 import com.fangga.suitmediamobiledeveloperintern2023.data.source.remote.response.UserResponse
 import com.fangga.suitmediamobiledeveloperintern2023.util.Constant
 
-class UserPagingSource(
-    private val apiService: ApiService,
-): PagingSource<Int, UserResponse>() {
+class UserPagingSource(private val apiService: ApiService,): PagingSource<Int, UserResponse>() {
     override fun getRefreshKey(state: PagingState<Int, UserResponse>): Int? {
         return state.anchorPosition
     }
