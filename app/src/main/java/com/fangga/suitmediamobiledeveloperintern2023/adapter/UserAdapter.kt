@@ -12,8 +12,8 @@ import com.fangga.suitmediamobiledeveloperintern2023.databinding.ItemListUserBin
 import com.fangga.suitmediamobiledeveloperintern2023.model.User
 import com.fangga.suitmediamobiledeveloperintern2023.util.Constant
 
-class UserAdapter : PagingDataAdapter<User, UserAdapter.UserViewHolder>(DIFF_CALLBACK) {
-    class UserViewHolder(private val binding: ItemListUserBinding) : RecyclerView.ViewHolder(binding.root) {
+class UserAdapter(private val navigateBack:() -> Unit) : PagingDataAdapter<User, UserAdapter.UserViewHolder>(DIFF_CALLBACK) {
+    inner class  UserViewHolder(private val binding: ItemListUserBinding) : RecyclerView.ViewHolder(binding.root) {
         @SuppressLint("SetTextI18n")
         fun bindView(user: User) {
             binding.apply {
@@ -32,6 +32,7 @@ class UserAdapter : PagingDataAdapter<User, UserAdapter.UserViewHolder>(DIFF_CAL
                         "Selected User: $fullname",
                         Toast.LENGTH_SHORT
                     ).show()
+                    navigateBack.invoke()
                 }
             }
         }

@@ -26,7 +26,7 @@ class ThirdScreenActivity : AppCompatActivity() {
         setContentView(viewBinding.root)
         val factory = ViewModelFactory.getInstance()
         viewModel = ViewModelProvider(this, factory)[ThirdScreenViewModel::class.java]
-        userAdapter = UserAdapter()
+        userAdapter = UserAdapter{ onBackPressed() }
 
         viewBinding.apply {
 
