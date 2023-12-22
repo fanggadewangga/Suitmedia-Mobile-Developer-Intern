@@ -3,6 +3,7 @@ package com.fangga.suitmediamobiledeveloperintern2023.adapter
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -26,6 +27,11 @@ class UserAdapter : PagingDataAdapter<User, UserAdapter.UserViewHolder>(DIFF_CAL
 
                 itemView.setOnClickListener {
                     Constant.SELECTED_USERNAME = fullname
+                    Toast.makeText(
+                        itemView.context,
+                        "Selected User: $fullname",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
         }
